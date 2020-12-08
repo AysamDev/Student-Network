@@ -14,10 +14,14 @@ $("#signup_btn").on('click',function(e){
     $('#homePageBlock').css('display','block')
 
 })
+
 $("#signin_btn").on('click',function(e){
     e.preventDefault()
+    const username = $("#form_signin_username").val()
+    const password = $("form_signin_password").val()
+    api.getUserSignInDataFromDB(username,password)
     $('#signInBlock').css('display','none')
- $('#homePageBlock').css('display','block')
+    $('#homePageBlock').css('display','block')
 
 })
 $("#switchToSignUp").on('click',function(){

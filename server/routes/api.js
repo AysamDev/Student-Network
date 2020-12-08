@@ -37,7 +37,14 @@ router.get('/challenge/:type', async function (req, res) {
         })
 })
 
-router.get('/userData/:userName/:password', async function (req, res) {
-
+router.get('/userSignIn/:username/:password', async function (req, res) {
+    const username = req.params.username
+    const password = req.params.password
+    const user = await User.findOne({
+        userName: username,
+        password: password
+    }).populate({userName:1,password:1,name:1,rank:1,skills:1,challenges:1})
+    console.log(user)
+    res.send(user)
 })
 module.exports = router
