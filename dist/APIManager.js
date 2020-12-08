@@ -44,7 +44,7 @@ class APIManager {
             data: JSON.stringify(newUser),
             success: (result) =>
              {
-
+                window.location.replace("./index.html");
              }
              
             })
