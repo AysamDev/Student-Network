@@ -1,14 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const axios = require('axios');
-const User = require('./Models/user.js')
-const Employee = require('./Models/employer.js')
-
-router.get('/',function(req,res){
-    console.log("ohh hi new visitor")
-    res.send("ok working")
-})
-
+const User = require('../models/User.js')
+// const Employee = require('./Models/employer.js')
 
 router.post('/userSignUp',async function(req,res){
 const Username = req.body.username
@@ -29,6 +23,7 @@ res.send("Signed Up Successfully")
 res.send("incorrect user name")
 })
 
+router.get('/sign')
 router.get('/challenge/:type',async function(req,res){
     const type = req.params.type
     axios.get(`https://www.codewars.com/api/v1/code-challenges/${type}?access_key=Ka6QAn4J3s9GvrdE4vtw`)
@@ -44,4 +39,5 @@ router.get('/challenge/:type',async function(req,res){
 router.get('/userData/:userName/:password',async function(req,res){
   
 })
+module.exports = router
     
