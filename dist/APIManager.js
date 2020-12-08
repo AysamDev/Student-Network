@@ -18,14 +18,14 @@ class APIManager {
         });
     }
 
-    getUserSignInDataFromDB(user_name,password)
+    getUserSignInDataFromDB(username,password)
     {
             $.ajax({
                 type:"GET",
-                url: `/userSignIn/${user_name}/${password}`,
+                url: `/userSignIn/${username}/${password}`,
                 success: async (ref) =>
                 {
-                    window.location.replace('./index.html')
+                    console.log(ref)
                 }
             });
     }
@@ -36,6 +36,7 @@ class APIManager {
             password,
             name
         }
+
         $.ajax({
             type:"POST",
             contentType: "application/json",
@@ -44,7 +45,7 @@ class APIManager {
             dataType: "json",
             success: (result) =>
              {
-                //window.location.replace("./index.html");
+                
              }
              
             })
