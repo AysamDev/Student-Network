@@ -32,7 +32,7 @@ class APIManager {
     async signUpUser(username,password,name)
     {
         const newUser = {
-            username,
+            username,   
             password,
             name
         }
