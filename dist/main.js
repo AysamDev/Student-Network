@@ -3,15 +3,15 @@
 //form_password
 $('#signUpBlock').css('display','none')
 $('#homePageBlock').css('display','none')
-const api= new APIManager();
+const api= new APIManager()
 $("#signup_btn").on('click',function(e){
     e.preventDefault()
     const username = $("#form_username").val()
-    const name = $("#form_name").val()
-    const password = $("#form_password").val()
- api.signUpUser(username,password,name)
- $('#signUpBlock').css('display','none')
- $('#homePageBlock').css('display','block')
+    const name = $("#form_name_1").val()
+    const password = $("#form_password_1").val()
+    api.signUpUser(username,password,name)
+    $('#signUpBlock').css('display','none')
+    $('#homePageBlock').css('display','block')
 
 })
 $("#signin_btn").on('click',function(e){

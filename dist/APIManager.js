@@ -39,15 +39,14 @@ class APIManager {
         $.ajax({
             type:"POST",
             contentType: "application/json",
-            dataType: "json",
             url: `/userSignUp`,
             data: JSON.stringify(newUser),
+            dataType: "json",
             success: (result) =>
              {
                 //window.location.replace("./index.html");
              }
              
             })
-    }
-
+        }
 }
