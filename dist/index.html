@@ -10,7 +10,104 @@
 <link href="../dist/style/style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
+        
+<div id="signInBlock">
+    <h1 style="margin-left: 450px;">Sign In </h1>
 
+<div class="row ">
+    <div class="col-lg-4 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+            <div class="card-body bg-light">
+                <div class="container">
+                    <form id="contact-form" role="form">
+                        <div class="controls">
+              `         
+                            <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group"> <label>Name *</label> <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter Name *" required="required" data-error="Name is required"> </div>
+                            </div></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group"> <label for="form_password">Password</label> <input id="form_password" type="password" name="password" class="form-control" placeholder="Please enter password*" required="required" data-error="Password"> </div>
+                                </div>
+                             
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6"> <button id="switchToSignUp" class="btn btn-success btn-send pt-2 btn-block" >Sign up</button></div>
+                                <div class="col-md-6"> <button id="signin_btn" class="btn btn-success btn-send pt-2 btn-block "> Sign In</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+</div>
+
+<div id="signUpBlock">
+    <h1 style="margin-left: 450px;">Sign up </h1>
+
+<div class="row">
+    <div class="col-lg-4 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+            <div class="card-body bg-light">
+                <div class="container">
+                    <form id="contact-form" role="form">
+                        <div class="controls">
+                            <div class="row">
+                              
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                         <label >Codewars Username *</label>
+                                          <input id="form_username" type="text" name="name" class="form-control" placeholder="Please enter Codewars Username" required="required" data-error="Username is required">
+                                 </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                     <label>Name *</label>
+                                      <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter Name *" required="required" data-error="Name is required">
+                                     </div>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_password">Password</label>
+                                         <input id="form_password" type="password" name="password" class="form-control" placeholder="Please enter password*" required="required" data-error="Password"> 
+                                        </div>
+                                </div>
+                             
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6"> <button Id="switchToSignIn" class="btn btn-success btn-send pt-2 btn-block" >Sign In</button></div>
+                                <div class="col-md-6"> <button id="signup_btn" type="submit" class="btn btn-success btn-send pt-2 btn-block " >Sign Up </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+</div>
+
+<div id="homePageBlock">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="#" data-abc="true">Student++</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"> <a class="nav-link" href="#" data-abc="true">HTML <span class="sr-only">(current)</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#" data-abc="true">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#" data-abc="true">Tasks</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#" data-abc="true">Challenges</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#" data-abc="true">Courses</a> </li>
+               
+            </ul>
+        </div>
+    </nav>
+</div>
    
     <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
