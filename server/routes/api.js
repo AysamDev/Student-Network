@@ -6,7 +6,7 @@ const User = require('../models/User.js')
 
 router.post('/userSignUp',async function(req,res){
 const Username = req.body.username
-const data = await axios.get(`https://www.codewars.com/api/v1/users/${username}?access_key=Ka6QAn4J3s9GvrdE4vtw`)
+const data = await axios.get(`https://www.codewars.com/api/v1/users/${Username}?access_key=Ka6QAn4J3s9GvrdE4vtw`)
 if(data.username===Username)
 {
     const user = new User({ 
