@@ -25,7 +25,7 @@ class APIManager {
                 url: `/userSignIn/${user_name}/${password}`,
                 success: async (ref) =>
                 {
-                    
+                    window.location.replace('./index.html')
                 }
             });
     }
