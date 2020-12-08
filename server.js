@@ -4,10 +4,10 @@ const path = require('path')
 
 const mongoose = require('mongoose')
 //we need to make DB in atlas
-mongoose.connect("mongodb://localhost/", {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect("mongodb://localhost/student", {useNewUrlParser: true, useUnifiedTopology: true})
 
 
-const api = require('./server/route/api')
+const api = require('./server/routes/api')
 
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
