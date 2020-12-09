@@ -7,10 +7,10 @@ class Renderer
 
         this.userProfileSource = $('#profile-template').html()
         this.userProfileTemplate = Handlebars.compile(this.userProfileSource)
-/*      
-        this.userChallengePerTypeSource = $('#challenge-per-type-template').html()
+      
+        this.userChallengePerTypeSource = $('#challenges-template').html()
         this.userChallengePerTypeTemplate = Handlebars.compile(this.userChallengePerTypeSource)
-        */
+        
     }
     renderUserSkills(userData)
     {
@@ -27,10 +27,12 @@ class Renderer
         const newHtml  = this.userProfileTemplate(userData)
         $('.containerProfile').append(newHtml)
     }
-    renderUserChallengesPerType()
+    renderUserChallengesPerType(challenges)
     {
-        $('#homePageBlock').css('display','none')
-        
+        $('#skills-block').css('display','none')
+        $('#challenge-Block').css('display','block')
+        const newHtml = this.userChallengePerTypeTemplate({challenges})
+        $('#challenge-Block').append(newHtml)
     }
     
 
