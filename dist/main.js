@@ -3,7 +3,9 @@
 //form_password
 $('#signUpBlock').css('display','none')
 $('#homePageBlock').css('display','none')
-const api= new APIManager()
+const renderer = new Renderer()
+const api= new APIManager(renderer)
+
 $("#signup_btn").on('click',async function(e){
     e.preventDefault()
     const username = $("#form_username").val()
@@ -21,7 +23,8 @@ $("#signin_btn").on('click',async function(e){
     const password = $("#form_signin_password").val()
     if(username && password)
     {
-        await api.getUserSignInDataFromDB(username,password)
+         api.getUserSignInDataFromDB(username,password)
+        
         
     }
 })
@@ -37,6 +40,5 @@ $("#switchToSignIn").on('click',function(){
 
 
 })
-
 
 

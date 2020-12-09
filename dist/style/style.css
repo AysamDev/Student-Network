@@ -52,7 +52,7 @@ color: #fff;
 }
 
 .row1 {
-    width: 95%;
+    width: 350px;
     display: flex;
     padding: 10px;
     justify-content: center
@@ -60,7 +60,7 @@ color: #fff;
 
 @media (max-width: 494px) {
     .row1 {
-        flex-direction: column
+        flex-direction:column
     }
 }
 
