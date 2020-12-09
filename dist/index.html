@@ -19,7 +19,7 @@
         <div class="card mt-2 mx-auto p-4 bg-light">
             <div class="card-body bg-light">
                 <div class="container">
-                    <form id="contact-form" role="form">
+                    <form id="contact-form1" role="form">
                         <div class="controls">
               `         
                             <div class="row">
@@ -93,21 +93,120 @@
     </div>
 </div>
 </div>
-
+<!-----------------------------Display Navbar---------------------------------------------->
 <div id="homePageBlock">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="#" data-abc="true">Student++</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"> <a class="nav-link" href="#" data-abc="true">HTML <span class="sr-only">(current)</span></a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#" data-abc="true">Home</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#" data-abc="true">Tasks</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#" data-abc="true">Challenges</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#" data-abc="true">Courses</a> </li>
+                
+                <li class="nav-item"> <a class="nav-link" id="HomeNav" data-abc="true">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" id="TasksNav" data-abc="true">Tasks</a> </li>
+                <li class="nav-item"> <a class="nav-link" id="ChallengesNav" data-abc="true">Challenges</a> </li>
+                <li class="nav-item"> <a class="nav-link" id="CoursesNav" data-abc="true">Courses</a> </li>
                
             </ul>
         </div>
     </nav>
+    <!-----------------------------Display Profile---------------------------------------------->
+    <div class="containerProfile ">
+        <div class="d-flex justify-content-center row">
+            <div class="align-content-center col-md-12">
+                <div class="review-card p-2 bg-white rounded">
+                   
+                    <div class="d-flex mt-0 p-2">
+                        <div class="ml-1 mt-2">
+                            <h6 class="crop-text mb-0">James shoobert &nbsp;</h6>
+                            <div class="mt-0"><span class="dots"></span><span class="text-black-50 num-reviews">java C C++</span></div>
+                            <div class="d-flex flex-row align-items-center">
+                                <div class="square-ratings mr-2"><i class="fa fa-square ratings"></i><i class="fa fa-square ratings"></i><i class="fa fa-square ratings"></i><i class="fa fa-square ratings"></i><i class="fa fa-square rating-none"></i></div><span class="font-weight-bold text-black-50 excellent">Excellent</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-4 rating-box mb-3">
+                        <div class="border rounded">
+                            
+                            <div class="d-flex justify-content-around align-items-center align-content-center border-top">
+                                <div class="border-right px-2 text-center py-2"><span class="d-block font-weight-bold">4.2</span><span>Reviews</span></div>
+                                <div class="text-center border-right px-2 py-2"><span class="d-block font-weight-bold">4.9</span><span>Courses</span></div>
+                                <div class="text-center border-right px-2 py-2"><span class="d-block font-weight-bold">4.2</span><span>Tasks</span></div>
+                                <div class="text-center px-2 py-2"><span class="d-block font-weight-bold">4.0</span><span>Score</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------------Display Courses---------------------------------------------->
+    <div class="row d-flex justify-content-center mt-100 mb-100">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="card-title m-b-0">Courses</h4>
+                </div>
+                <ul class="list-style-none">
+                    <li class="d-flex no-block card-body"> <i class="fa fa-check-circle w-30px m-t-5"></i>
+                        <div> <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Java</a> <span class="text-muted">Intermediatee</span> </div>
+                        <div class="ml-auto">
+                            <div class="tetx-right">
+                                <h5 class="text-muted m-b-0">26</h5> <span class="text-muted font-16">FEB</span>
+                            </div><button type="button" class="btn btn-dark">Enroll</button>
+                        </div>
+                    </li>
+                    <li class="d-flex no-block card-body border-top"> <i class="fa fa-gift w-30px m-t-5"></i>
+                        <div> <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Java</a> <span class="text-muted">intermediate course</span> </div>
+                        <div class="ml-auto">
+                            <div class="tetx-right">
+                                <h5 class="text-muted m-b-0">11</h5> <span class="text-muted font-16">MAR</span>
+                            </div><button type="button" class="btn btn-dark">Enroll</button>
+                        </div>
+                    </li>
+                    <li class="d-flex no-block card-body border-top"> <i class="fa fa-plus w-30px m-t-5"></i>
+                        <div> <a href="#" class="m-b-0 font-medium p-0" data-abc="true"> Android </a> <span class="text-muted">intermediate course</span> </div>
+                        <div class="ml-auto">
+                            <div class="tetx-right">
+                                <h5 class="text-muted m-b-0">19</h5> <span class="text-muted font-16">APR</span>
+                            </div><button type="button" class="btn btn-dark">Enroll</button>
+                        </div>
+                    </li>
+                    <li class="d-flex no-block card-body border-top"> <i class="fa fa-leaf w-30px m-t-5"></i>
+                        <div> <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Html</a> <span class="text-muted">Course in html ...</span> </div>
+                        <div class="ml-auto">
+                            <div class="tetx-right">
+                                <h5 class="text-muted m-b-0">20</h5> <span class="text-muted font-16">JUN</span>
+                            </div><button type="button" class="btn btn-dark">Enroll</button>
+                        </div>
+                    </li>
+                    <li class="d-flex no-block card-body border-top"> <i class="fa fa-question-circle w-30px m-t-5"></i>
+                        <div> <a href="#" class="m-b-0 font-medium p-0" >Python</a> <span class="text-muted"> intermediate course </span> </div>
+                        <div class="ml-auto">
+                            <div class="tetx-right">
+                                <h5 class="text-muted m-b-0">15</h5> <span class="text-muted font-16">AUG</span>
+                            </div><button type="button" class="btn btn-dark">Enroll</button>
+                        </div>
+                    </li>
+                    <li class="d-flex no-block card-body border-top"> <i class="fa fa-plus w-30px m-t-5"></i>
+                        <div> <a href="#" class="m-b-0 font-medium p-0" >Android </a> <span class="text-muted">intermediate course</span> </div>
+                        <div class="ml-auto">
+                            <div class="tetx-right">
+                                <h5 class="text-muted m-b-0">19</h5> <span class="text-muted font-16">OCT</span>
+                            </div><button type="button" class="btn btn-dark">Enroll</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-----------------------------Display Challenges ---------------------------------------------->
+    <div class="vertical-menu bg-dark">
+        <a class="bg-dark" id="ChallengesHead">Challenges</a>
+        <a href="#">challenge 1</a>
+        <a href="#">challenge 2</a>
+        <a href="#">challenge 3</a>
+        <a href="#">challenge 4</a>
+      </div>
 </div>
+
    
     <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
