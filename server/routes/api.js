@@ -3,7 +3,7 @@ const router = express.Router()
 const axios = require('axios');
 const mongoose = require('mongoose');
 const User = require('../models/User')
-// const Employee = require('./Models/employer.js')
+const Challenge = require('./Models/Challenge.js')
 
 router.post('/userSignUp', async function (req, res) {
     const Username = req.body.username
@@ -57,6 +57,15 @@ router.post('/userSignIn/', async function (req, res) {
     }
     res.send(user)
 })
-
+//update 
+router.post('/addChallenge',async function(req,res){
+    const challenge = req.body.challenge
+    const user = req.body.user
+    User.findOneAndUpdate({userName:user},{ $push: { challenges: challenge  } }, function(err,data){
+        if(err)
+            res.send(err)
+        res.end()    
+    })
+})
 
 module.exports = router
