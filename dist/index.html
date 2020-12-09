@@ -111,15 +111,18 @@
         </div>
     </nav>
     <!-----------------------------Display Profile---------------------------------------------->
-    <div class="containerProfile ">
+   
+    <script id="profile-template" type="text/x-handlebars-template">
+        {{ profile}}
+         <div class="containerProfile ">
         <div class="d-flex justify-content-center row">
             <div class="align-content-center col-md-12">
                 <div class="review-card p-2 bg-white rounded">
                    
                     <div class="d-flex mt-0 p-2">
                         <div class="ml-1 mt-2">
-                            <h6 class="crop-text mb-0">James shoobert &nbsp;</h6>
-                            <div class="mt-0"><span class="dots"></span><span class="text-black-50 num-reviews">java C C++</span></div>
+                            <h6 class="crop-text mb-0">{{name}} &nbsp;</h6>
+                            <div class="mt-0"><span class="dots"></span><span class="text-black-50 num-reviews">{{skills}}</span></div>
                             <div class="d-flex flex-row align-items-center">
                                 <div class="square-ratings mr-2"><i class="fa fa-square ratings"></i><i class="fa fa-square ratings"></i><i class="fa fa-square ratings"></i><i class="fa fa-square ratings"></i><i class="fa fa-square rating-none"></i></div><span class="font-weight-bold text-black-50 excellent">Excellent</span>
                             </div>
@@ -129,10 +132,10 @@
                         <div class="border rounded">
                             
                             <div class="d-flex justify-content-around align-items-center align-content-center border-top">
-                                <div class="border-right px-2 text-center py-2"><span class="d-block font-weight-bold">4.2</span><span>Reviews</span></div>
-                                <div class="text-center border-right px-2 py-2"><span class="d-block font-weight-bold">4.9</span><span>Courses</span></div>
-                                <div class="text-center border-right px-2 py-2"><span class="d-block font-weight-bold">4.2</span><span>Tasks</span></div>
-                                <div class="text-center px-2 py-2"><span class="d-block font-weight-bold">4.0</span><span>Score</span></div>
+                                <div class="border-right px-2 text-center py-2"><span class="d-block font-weight-bold">4.2</span><span>{{skills}}</span></div>
+                                <div class="text-center border-right px-2 py-2"><span class="d-block font-weight-bold">4.9</span><span>{{Challenges}}</span></div>
+                                <div class="text-center border-right px-2 py-2"><span class="d-block font-weight-bold">4.2</span><span>{{Tasks}}</span></div>
+                                <div class="text-center px-2 py-2"><span class="d-block font-weight-bold">4.0</span><span>{{Score}}</span></div>
                             </div>
                         </div>
                     </div>
@@ -140,12 +143,14 @@
             </div>
         </div>
     </div>
+</script>
  <!-----------------------------Display Skills---------------------------------------------->
- <div id="skills-block">
+ <div id="skills-block" >
  </div>
  <script id="skills-template" type="text/x-handlebars-template">
     {{#each skills}}
-    <div class="row1">
+
+    <div class="row1 ">
         <div class="card">
             <div class="card_img"> <i class="fas fa-plus"></i> </div>
             <div class="card_title">{{this}}</div>
@@ -231,7 +236,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
 <script src="User.js"></script>
-<script src="renderer.js"></script>
+<script src="Renderer.js"></script>
 <script src="APIManager.js"></script>
 <script src="main.js"></script>
 </body>

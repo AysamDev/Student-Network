@@ -2,8 +2,9 @@
 
 class APIManager {
 
-    constructor()
+    constructor(renderer)
      {
+         this.renderer = renderer
         this.user = {}
     }
 
@@ -42,9 +43,8 @@ class APIManager {
                         alert("Please enter your details correctly")
                         return
                     }
-                    $('#signInBlock').css('display','none')
-                    $('#homePageBlock').css('display','block')
                     this.user = await new User(ref.userName,ref.name,ref.skills,ref.rank,ref.challenges)
+                    this.renderer.renderUserSkills(this.user)
                 },
                 error: (err) => {
                     console.log(err)
