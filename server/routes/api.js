@@ -5,25 +5,30 @@ const mongoose = require('mongoose');
 const User = require('../models/User')
 const Challenge = require('../models/Challenge');
 
-
-
 router.post('/userSignUp', async function (req, res) {
     const Username = req.body.username
-    const data = await axios.get(`https://www.codewars.com/api/v1/users/${Username}?access_key=Ka6QAn4J3s9GvrdE4vtw`)
 
+        const data = await axios.get(`https://www.codewars.com/api/v1/users/${Username}?access_key=Ka6QAn4J3s9GvrdE4vtw`)
+    
     if (data.data.username === Username) {
         const user = new User({
-            userName: Username,
+            username: Username,
             password: req.body.password,
             name: req.body.name,
             skills: data.data.skills,
-            rank: data.data.ranks.overall.rank || 0,
+            rank: data.data.ranks.overall.rank * -1 || 0 ,
             challenges: []
-
         })
         user.save()
+        res.send(user)
+        return
     }
-    res.end()
+    else
+    {
+        res.end()
+    }
+    
+    
 })
 
 
@@ -43,7 +48,7 @@ router.post('/userSignIn/', async function (req, res) {
     console.log(username)
     console.log(password)
     const user = await User.findOne({
-        userName: username,
+        username: username,
         password: password
     })
     if(user === null)

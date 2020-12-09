@@ -14,6 +14,9 @@ class Renderer
     }
     renderUserSkills(userData)
     {
+        $('#challenges-block').children().remove()
+        $('#skills-block').css('display','block')
+        $('#skills-block').children().remove()
         $('#signInBlock').css('display','none')
         $('#homePageBlock').css('display','block')
           console.log(userData)
@@ -24,11 +27,13 @@ class Renderer
     }
     renderUserProfile(userData)
     {
+        $('.containerProfile').children().remove()
         const newHtml  = this.userProfileTemplate(userData)
         $('.containerProfile').append(newHtml)
     }
     renderUserChallengesPerType(challenges)
     {
+        $('#challenges-block').children().remove()
         $('#skills-block').css('display','none')
         $('#challenges-block').css('display','block')
         const newHtml = this.userChallengePerTypeTemplate({challenges})

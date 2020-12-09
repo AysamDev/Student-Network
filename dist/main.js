@@ -6,19 +6,24 @@ $('#homePageBlock').css('display','none')
 const renderer = new Renderer()
 const api= new APIManager(renderer)
 
-$("#signup_btn").on('click',async function(e){
-    e.preventDefault()
+$("#signup_btn").on('click',async function(){
     const username = $("#form_username").val()
     const name = $("#form_name_1").val()
     const password = $("#form_password_1").val()
-    api.signUpUser(username,password,name)
-    $('#signUpBlock').css('display','none')
-    $('#homePageBlock').css('display','block')
-
+    if(username && name && password)
+    {
+        api.signUpUser(username,password,name)
+        $('#signUpBlock').css('display','none')
+        $('#homePageBlock').css('display','block')
+    }
+    else
+    {
+        alert("Please Enter Correct CodeWards Username And All Details")
+    }
+    
 })
 
-$("#signin_btn").on('click',async function(e){
-    e.preventDefault()
+$("#signin_btn").on('click',async function(){
     const username = $("#form_signin_username").val()
     const password = $("#form_signin_password").val()
     if(username && password)
@@ -45,3 +50,10 @@ $('#skills-block').on('click',".fa-plus",async function(){
     api.getChallengesPerSkill(skill)
 })
 
+
+$('#HomeNav').on('click', function(){
+    const user = api.getLoggedInUserData()
+    console.log(user)
+    renderer.renderUserSkills(user)
+    renderer.renderUserProfile(user)
+})

@@ -4,7 +4,7 @@ class APIManager {
 
     constructor(renderer)
      {
-         this.renderer = renderer
+        this.renderer = renderer
         this.user = {}
         this.currentSkillChallenges = []
     }
@@ -54,7 +54,7 @@ class APIManager {
                         alert("Please enter your details correctly")
                         return
                     }
-                    this.user = await new User(ref.userName,ref.name,ref.skills,ref.rank,ref.challenges)
+                    this.user = await new User(ref.username,ref.name,ref.skills,ref.rank,ref.challenges)
                     this.renderer.renderUserSkills(this.user)
                     this.renderer.renderUserProfile(this.user)
                 },
@@ -79,7 +79,9 @@ class APIManager {
             dataType: "json",
             success: (result) =>
              {
-                
+                 this.user = result
+                 this.renderer.renderUserSkills(this.user)
+                 this.renderer.renderUserProfile(this.user)
              },
              error: (err) =>
              {
@@ -93,5 +95,10 @@ class APIManager {
         getLoggedInUserData()
         {
             return this.user
+        }
+
+        getLoggedInUserChallenges()
+        {
+            return this.currentSkillChallenges
         }
 }
