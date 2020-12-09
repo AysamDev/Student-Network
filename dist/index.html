@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+<link href="./style/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet">
 <link href="./style/css/bootstrap.css" rel="stylesheet" rel="stylesheet" media="all" />
 <link href="./style/style.css" rel="stylesheet"  media="all" />
 </head>
@@ -24,20 +25,21 @@
               `         
                             <div class="row">
                             <div class="col-md-12">
-                                <div class="form-group"> <label>Name *</label> <input id="form_signin_username" type="text" name="name" class="form-control" placeholder="Please enter Username *" required="required" data-error="Username is required"> </div>
+                                <div class="form-group"> <label>Name *</label> <input id="form_signin_username" type="text"  placeholder="Please enter Username *" required="required" data-error="Username is required"> </div>
                             </div></div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group"> <label for="form_password">Password</label> <input id="form_signin_password" type="password" name="password" class="form-control" placeholder="Please enter password*" required="required" data-error="Password"> </div>
+                                    <div class="form-group"> <label for="form_password">Password</label> <input id="form_signin_password" type="password"  placeholder="Please enter password*" required="required" data-error="Password"> </div>
                                 </div>
                              
                             </div>
-                            <div class="row">
-                                <div class="col-md-6"> <button id="switchToSignUp" class="btn btn-success btn-send pt-2 btn-block" >Sign up</button></div>
-                                <div class="col-md-6"> <button id="signin_btn" class="btn btn-success btn-send pt-2 btn-block "> Sign In</div>
-                            </div>
+                           
                         </div>
                     </form>
+                    <div class="row">
+                        <div class="col-md-6"> <button id="switchToSignUp" class="btn btn-success btn-send pt-2 btn-block" >Sign up</button></div>
+                        <div class="col-md-6"> <button id="signin_btn" class="btn btn-success btn-send pt-2 btn-block "> Sign In</div>
+                    </div>
                 </div>
             </div>
         </div> 
@@ -81,12 +83,13 @@
                                 </div>
                              
                             </div>
-                            <div class="row">
-                                <div class="col-md-6"> <button Id="switchToSignIn" class="btn btn-success btn-send pt-2 btn-block" >Sign In</button></div>
-                                <div class="col-md-6"> <button id="signup_btn" type="submit" class="btn btn-success btn-send pt-2 btn-block " >Sign Up </div>
-                            </div>
+                            
                         </div>
                     </form>
+                    <div class="row">
+                        <div class="col-md-6"> <button Id="switchToSignIn" class="btn btn-success btn-send pt-2 btn-block" >Sign In</button></div>
+                        <div class="col-md-6"> <button id="signup_btn" type="submit" class="btn btn-success btn-send pt-2 btn-block " >Sign Up </div>
+                    </div>
                 </div>
             </div>
         </div> 
@@ -137,6 +140,23 @@
             </div>
         </div>
     </div>
+ <!-----------------------------Display Skills---------------------------------------------->
+ <div id="skills-block">
+ </div>
+ <script id="skills-template" type="text/x-handlebars-template">
+    {{#each skills}}
+    <div class="row1">
+        <div class="card">
+            <div class="card_img"> <i class="fas fa-plus"></i> </div>
+            <div class="card_title">{{this}}</div>
+            <div class="card_body">
+                <p>explore the language</p>
+            </div>
+        </div>
+        </div>
+        {{/each}}
+  </script>
+ 
     <!-----------------------------Display Courses---------------------------------------------->
     <div class="row d-flex justify-content-center mt-100 mb-100">
         <div class="col-lg-6">
