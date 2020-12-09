@@ -30,9 +30,9 @@ class Renderer
     renderUserChallengesPerType(challenges)
     {
         $('#skills-block').css('display','none')
-        $('#challenge-Block').css('display','block')
+        $('#challenges-block').css('display','block')
         const newHtml = this.userChallengePerTypeTemplate({challenges})
-        $('#challenge-Block').append(newHtml)
+        $('#challenges-block').append(newHtml)
     }
     
 

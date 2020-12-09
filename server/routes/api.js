@@ -29,11 +29,7 @@ router.post('/userSignUp', async function (req, res) {
 
 router.post('/challenges/', async function (req, res) {
     const type = req.body.skill
-    const found= await Challenge.find({skill:type},{
-        skill,
-        url,
-        slug
-    })
+    const found= await Challenge.find({skill:type})
     res.send(found)
 })
 
