@@ -1,9 +1,10 @@
 
+
 class APIManager {
 
     constructor()
      {
-
+        this.user = {}
     }
 
     getUsersDataFromDB()
@@ -21,11 +22,23 @@ class APIManager {
     getUserSignInDataFromDB(username,password)
     {
             $.ajax({
-                type:"GET",
-                url: `/userSignIn/${username}/${password}`,
+                type:"POST",
+                url: `/userSignIn/`,
+                data:{username,password},
                 success: async (ref) =>
                 {
-                    console.log(ref)
+                    if(!ref){
+                        //error handle
+                        alert("Please enter your details correctly")
+                        return
+                    }
+                    $('#signInBlock').css('display','none')
+                    $('#homePageBlock').css('display','block')
+                    this.user = await new User(ref.userName,ref.name,ref.skills,ref.rank,ref.challenges)
+                    console.log(this.user)
+                },
+                error: (err) => {
+                    console.log(err)
                 }
             });
     }
@@ -46,7 +59,12 @@ class APIManager {
             success: (result) =>
              {
                 
+             },
+             error: (err) =>
+             {
+                 console.log(err)
              }
+             
              
             })
         }

@@ -1,9 +1,8 @@
 class User
 {
-    constructor(username,password,name,skills,rank,challenges)
+    constructor(username,name,skills,rank,challenges)
     {
         this.username = username
-        this.password = password
         this.name = name
         this.skills = skills
         this.rank = rank
