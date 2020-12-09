@@ -39,6 +39,15 @@ class Renderer
         const newHtml = this.userChallengePerTypeTemplate({challenges})
         $('#challenges-block').append(newHtml)
     }
+    renderUserTask()
+    {
+        $('#challenges-block').children().remove()
+        $('#skills-block').css('display','none')
+        $('#challenges-block').css('display','none')
+        $('#tasks-block').css('display','block')
+        const newHtml = this.userChallengePerTypeTemplate({challenges})
+        $('#tasks-block').append(newHtml)
+    }
     
 
 }
