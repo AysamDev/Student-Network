@@ -37,14 +37,26 @@ router.get('/challenge/:type', async function (req, res) {
         })
 })
 
-router.get('/userSignIn/:username/:password', async function (req, res) {
-    const username = req.params.username
-    const password = req.params.password
+router.post('/userSignIn/', async function (req, res) {
+    const username = req.body.username
+    const password = req.body.password
+    if(!username || !password){
+        res.send(null)
+        return
+    }
+    console.log(username)
+    console.log(password)
     const user = await User.findOne({
         userName: username,
         password: password
-    }).populate({userName:1,password:1,name:1,rank:1,skills:1,challenges:1})
-    console.log(user)
+    })
+    if(user === null)
+    {
+        res.send(null)
+        return
+    }
     res.send(user)
 })
+
+
 module.exports = router

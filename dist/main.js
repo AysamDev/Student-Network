@@ -4,25 +4,26 @@
 $('#signUpBlock').css('display','none')
 $('#homePageBlock').css('display','none')
 const api= new APIManager()
-$("#signup_btn").on('click',function(e){
+$("#signup_btn").on('click',async function(e){
     e.preventDefault()
     const username = $("#form_username").val()
     const name = $("#form_name_1").val()
     const password = $("#form_password_1").val()
-    api.signUpUser(username,password,name)
+    await api.signUpUser(username,password,name)
     $('#signUpBlock').css('display','none')
     $('#homePageBlock').css('display','block')
 
 })
 
-$("#signin_btn").on('click',function(e){
+$("#signin_btn").on('click',async function(e){
     e.preventDefault()
     const username = $("#form_signin_username").val()
-    const password = $("form_signin_password").val()
-    api.getUserSignInDataFromDB(username,password)
-    $('#signInBlock').css('display','none')
-    $('#homePageBlock').css('display','block')
-
+    const password = $("#form_signin_password").val()
+    if(username && password)
+    {
+        await api.getUserSignInDataFromDB(username,password)
+        
+    }
 })
 $("#switchToSignUp").on('click',function(){
     $('#signInBlock').css('display','none')
