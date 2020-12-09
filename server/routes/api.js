@@ -3,7 +3,9 @@ const router = express.Router()
 const axios = require('axios');
 const mongoose = require('mongoose');
 const User = require('../models/User')
-const Challenge = require('../models/Challenge')
+const Challenge = require('../models/Challenge');
+
+
 
 router.post('/userSignUp', async function (req, res) {
     const Username = req.body.username
@@ -25,16 +27,10 @@ router.post('/userSignUp', async function (req, res) {
 })
 
 
-router.get('/challenge/:type', async function (req, res) {
-    const type = req.params.type
-    axios.get(`https://www.codewars.com/api/v1/code-challenges/${type}?access_key=Ka6QAn4J3s9GvrdE4vtw`)
-        .then(function (response) {
-            // handle success
-            res.send(response.data)
-        })
-        .catch(function (error) {
-            res.send(error)
-        })
+router.post('/challenges/', async function (req, res) {
+    const type = req.body.skill
+    const found= await Challenge.find({skill:type})
+    res.send(found)
 })
 
 router.post('/userSignIn/', async function (req, res) {
@@ -58,7 +54,7 @@ router.post('/userSignIn/', async function (req, res) {
     res.send(user)
 })
 //update 
-router.post('/addChallenge',async function(req,res){
+/*router.post('/addChallenge',async function(req,res){
     const challenge = req.body.challenge
     const user = req.body.user
     User.findOneAndUpdate({userName:user},{ $push: { challenges: challenge  } }, function(err,data){
@@ -66,6 +62,6 @@ router.post('/addChallenge',async function(req,res){
             res.send(err)
         res.end()    
     })
-})
+})*/
 
 module.exports = router

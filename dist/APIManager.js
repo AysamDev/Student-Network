@@ -6,6 +6,7 @@ class APIManager {
      {
          this.renderer = renderer
         this.user = {}
+        this.currentSkillChallenges = []
     }
 
     getUsersDataFromDB()
@@ -19,15 +20,24 @@ class APIManager {
             }
         });
     }
-    getChallengesPerType(skill)
+    getChallengesPerSkill(skill)
     {
         $.ajax({
-            type:"GET",
-            url: `/challenge:${skill}`,
-            success:  (ref) =>
-            {
-               console.log(ref)
-            }
+            type:"POST",
+            url: `/challenges/`,
+            data: {skill},
+                success:  (ref) =>
+                {
+                    if(!ref){
+                        alert("there are no challenges found for this type of skill")
+                        return
+                    }
+                   this.currentSkillChallenges = ref
+                   this.renderer.renderUserChallengesPerType(this.currentSkillChallenges)
+                },
+                error: (err) => {
+                    console.log(err)
+                }
         }); 
     }
     getUserSignInDataFromDB(username,password)
@@ -45,6 +55,7 @@ class APIManager {
                     }
                     this.user = await new User(ref.userName,ref.name,ref.skills,ref.rank,ref.challenges)
                     this.renderer.renderUserSkills(this.user)
+                    this.renderer.renderUserProfile(this.user)
                 },
                 error: (err) => {
                     console.log(err)
