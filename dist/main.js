@@ -39,4 +39,9 @@ $("#switchToSignIn").on('click',function(){
 
 })
 
+$('#skills-block').on('click',".fa-plus",async function(){
+    const skill = await $(this).parent('.card_img').siblings('.card_title').text()
+    console.log(skill)
+    api.getChallengesPerSkill(skill)
+})
 

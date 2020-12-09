@@ -20,12 +20,13 @@ class APIManager {
             }
         });
     }
-    getChallengesPerSkill(skill)
+    getChallengesPerSkill(type)
     {
+        console.log(type)
         $.ajax({
             type:"POST",
             url: `/challenges/`,
-            data: {skill},
+            data: {skill: type},
                 success:  (ref) =>
                 {
                     if(!ref){

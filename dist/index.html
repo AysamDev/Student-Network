@@ -155,7 +155,8 @@
     {{#each skills}}
     <div class="row1 flex-row col-4">
         <div class="card">
-            <div class="card_img"> <i class="fas fa-plus"></i> </div>
+            <div class="card_img"> <i class="fas fa-plus"></i>
+             </div>
             <div class="card_title">{{this}}</div>
             <div class="card_body">
                 <p>explore the language</p>
@@ -167,65 +168,32 @@
   </script>
  
     <!-----------------------------Display Courses---------------------------------------------->
+    <div id="challenges-block">
+    </div>
+    <script id="challenges-template" type="text/x-handlebars-template">
+       {{#each challenges}}
     <div class="row d-flex justify-content-center mt-100 mb-100">
         <div class="col-lg-6">
-            <div class="card">
+            <div id="card-Block"class="card">
                 <div class="card-body text-center">
-                    <h4 class="card-title m-b-0">Courses</h4>
+                    <h4 class="card-title m-b-0">{{skill}} challenges</h4>
                 </div>
                 <ul class="list-style-none">
                     <li class="d-flex no-block card-body"> <i class="fa fa-check-circle w-30px m-t-5"></i>
-                        <div> <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Java</a> <span class="text-muted">Intermediatee</span> </div>
+                        <div> <a href="#" class="m-b-0 font-medium p-0" data-abc="true">{{slug}}</a> <span class="text-muted">Intermediatee</span> </div>
                         <div class="ml-auto">
                             <div class="tetx-right">
-                                <h5 class="text-muted m-b-0">26</h5> <span class="text-muted font-16">FEB</span>
-                            </div><button type="button" class="btn btn-dark">Enroll</button>
+                                <!--<h5 class="text-muted m-b-0">26</h5> <span class="text-muted font-16">FEB</span>-->
+                            </div><button type="button" href="{{url}}" class="btn btn-dark">Enroll</button>
                         </div>
                     </li>
-                    <li class="d-flex no-block card-body border-top"> <i class="fa fa-gift w-30px m-t-5"></i>
-                        <div> <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Java</a> <span class="text-muted">intermediate course</span> </div>
-                        <div class="ml-auto">
-                            <div class="tetx-right">
-                                <h5 class="text-muted m-b-0">11</h5> <span class="text-muted font-16">MAR</span>
-                            </div><button type="button" class="btn btn-dark">Enroll</button>
-                        </div>
-                    </li>
-                    <li class="d-flex no-block card-body border-top"> <i class="fa fa-plus w-30px m-t-5"></i>
-                        <div> <a href="#" class="m-b-0 font-medium p-0" data-abc="true"> Android </a> <span class="text-muted">intermediate course</span> </div>
-                        <div class="ml-auto">
-                            <div class="tetx-right">
-                                <h5 class="text-muted m-b-0">19</h5> <span class="text-muted font-16">APR</span>
-                            </div><button type="button" class="btn btn-dark">Enroll</button>
-                        </div>
-                    </li>
-                    <li class="d-flex no-block card-body border-top"> <i class="fa fa-leaf w-30px m-t-5"></i>
-                        <div> <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Html</a> <span class="text-muted">Course in html ...</span> </div>
-                        <div class="ml-auto">
-                            <div class="tetx-right">
-                                <h5 class="text-muted m-b-0">20</h5> <span class="text-muted font-16">JUN</span>
-                            </div><button type="button" class="btn btn-dark">Enroll</button>
-                        </div>
-                    </li>
-                    <li class="d-flex no-block card-body border-top"> <i class="fa fa-question-circle w-30px m-t-5"></i>
-                        <div> <a href="#" class="m-b-0 font-medium p-0" >Python</a> <span class="text-muted"> intermediate course </span> </div>
-                        <div class="ml-auto">
-                            <div class="tetx-right">
-                                <h5 class="text-muted m-b-0">15</h5> <span class="text-muted font-16">AUG</span>
-                            </div><button type="button" class="btn btn-dark">Enroll</button>
-                        </div>
-                    </li>
-                    <li class="d-flex no-block card-body border-top"> <i class="fa fa-plus w-30px m-t-5"></i>
-                        <div> <a href="#" class="m-b-0 font-medium p-0" >Android </a> <span class="text-muted">intermediate course</span> </div>
-                        <div class="ml-auto">
-                            <div class="tetx-right">
-                                <h5 class="text-muted m-b-0">19</h5> <span class="text-muted font-16">OCT</span>
-                            </div><button type="button" class="btn btn-dark">Enroll</button>
-                        </div>
-                    </li>
+                
                 </ul>
             </div>
         </div>
     </div>
+    {{/each}}
+</script>
     <!-----------------------------Display Challenges ---------------------------------------------->
     <div class="page-content page-container" id="page-content">
         <div class="padding">
