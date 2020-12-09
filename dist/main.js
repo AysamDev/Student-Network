@@ -57,3 +57,16 @@ $('#HomeNav').on('click', function(){
     renderer.renderUserSkills(user)
     renderer.renderUserProfile(user)
 })
+$('#ChallengesNav').on('click', function(){
+    const user = api.getLoggedInUserData()
+    console.log(user)
+    renderer.renderUserSkills(user)
+    renderer.renderUserProfile(user)
+})
+
+$('#TasksNav').on('click', function(){
+    const user = api.getLoggedInUserData()
+    console.log(user)
+    renderer.renderUserTask(user)
+    renderer.renderUserProfile(user)
+})
