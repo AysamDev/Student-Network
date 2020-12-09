@@ -14,11 +14,21 @@ class APIManager {
             url: `/users`,
             success: async (ref) =>
             {
-                this.users = await ref
+               
             }
         });
     }
-
+    getChallengesPerType(skill)
+    {
+        $.ajax({
+            type:"GET",
+            url: `/challenge:${skill}`,
+            success:  (ref) =>
+            {
+               console.log(ref)
+            }
+        }); 
+    }
     getUserSignInDataFromDB(username,password)
     {
             $.ajax({
@@ -35,7 +45,6 @@ class APIManager {
                     $('#signInBlock').css('display','none')
                     $('#homePageBlock').css('display','block')
                     this.user = await new User(ref.userName,ref.name,ref.skills,ref.rank,ref.challenges)
-                    console.log(this.user)
                 },
                 error: (err) => {
                     console.log(err)
@@ -67,5 +76,10 @@ class APIManager {
              
              
             })
+        }
+
+        getLoggedInUserData()
+        {
+            return this.user
         }
 }
