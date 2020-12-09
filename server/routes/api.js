@@ -3,7 +3,7 @@ const router = express.Router()
 const axios = require('axios');
 const mongoose = require('mongoose');
 const User = require('../models/User')
-const Challenge = require('./Models/Challenge.js')
+const Challenge = require('../models/Challenge')
 
 router.post('/userSignUp', async function (req, res) {
     const Username = req.body.username
