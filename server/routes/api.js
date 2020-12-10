@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const User = require('../models/User')
 const Challenge = require('../models/Challenge');
 
+
 router.post('/userSignUp', async function (req, res) {
     const Username = req.body.username
 
@@ -31,13 +32,22 @@ router.post('/userSignUp', async function (req, res) {
     
 })
 
+router.post('/exploreSkills/', async function (req, res) {
+    const blackList = req.body.skills
+    const found= await Challenge.find({},{skill: 1,_id:0})
+    console.log(blackList)
+    const found2 = await found.filter(s => !blackList.includes(s.skill))
+    let a = found2.map(f => f.skill)
+    list = a.filter((x, i, v) => v.indexOf(x) === i)
+    console.log(list)
+    res.send(list)
+})
 
 router.post('/challenges/', async function (req, res) {
     const type = req.body.skill
     const found= await Challenge.find({skill:type})
     res.send(found)
 })
-
 router.post('/userSignIn/', async function (req, res) {
     const username = req.body.username
     const password = req.body.password
@@ -58,15 +68,17 @@ router.post('/userSignIn/', async function (req, res) {
     }
     res.send(user)
 })
-//update 
-/*router.post('/addChallenge',async function(req,res){
-    const challenge = req.body.challenge
-    const user = req.body.user
-    User.findOneAndUpdate({userName:user},{ $push: { challenges: challenge  } }, function(err,data){
-        if(err)
-            res.send(err)
-        res.end()    
-    })
-})*/
+
+router.put('/addSkill/:skill/:username',async function(req,res){
+    const skill = req.params.skill
+    const username = req.params.username
+     User.findOneAndUpdate({username: username},{$push:{skills: skill}},function(err,data)
+     {
+        console.log(data)
+        res.send(data)
+     })
+    
+})
 
 module.exports = router
+

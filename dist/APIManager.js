@@ -41,6 +41,42 @@ class APIManager {
                 }
         }); 
     }
+    getNonAddedUserSkills()
+    {
+        const skills = this.user.skills
+        $.ajax({
+            type:"POST",
+            url: `/exploreSkills/`,
+            data: {skills: skills},
+                success:  (ref) =>
+                {
+                    if(!ref){
+                        alert("there are no Skills left to add")
+                        return
+                    }
+                   
+                },
+                error: (err) => {
+                    console.log(err)
+                }
+        }); 
+    }
+    addSkillToUser(skill)
+    {
+        const username = this.user.username
+        $.ajax({
+            type:"PUT",
+            url: `/addSkill/${skill}/${username}`,
+            success:  (result) =>
+            {
+               console.log(result)
+            },
+            error: (err) => {
+                console.log(err)
+            }
+        });
+    }
+
     getUserSignInDataFromDB(username,password)
     {
             $.ajax({
