@@ -16,6 +16,7 @@ class Renderer
     {
         $('#challenges-block').children().remove()
         $('#skills-block').css('display','block')
+        $('#addSkills-block').css('display','none')
         $('#skills-block').children().remove()
         $('#signInBlock').css('display','none')
         $('#homePageBlock').css('display','block')
@@ -35,19 +36,20 @@ class Renderer
     {
         $('#challenges-block').children().remove()
         $('#skills-block').css('display','none')
+        $('#addSkills-block').css('display','none')
         $('#challenges-block').css('display','block')
         const newHtml = this.userChallengePerTypeTemplate({challenges})
         $('#challenges-block').append(newHtml)
     }
-    renderUserTask()
-    {
+  
+    renderUsersAddSkill(){
+
         $('#challenges-block').children().remove()
         $('#skills-block').css('display','none')
         $('#challenges-block').css('display','none')
-        $('#tasks-block').css('display','block')
+        $('#tasks-block').css('display','none')
         const newHtml = this.userChallengePerTypeTemplate({challenges})
-        $('#tasks-block').append(newHtml)
+        $('#addSkill-block').append(newHtml)
     }
-    
 
 }
