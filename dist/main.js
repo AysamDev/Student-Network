@@ -53,7 +53,6 @@ $('#skills-block').on('click',".fa-plus",async function(){
 
 $('#HomeNav').on('click', function(){
     const user = api.getLoggedInUserData()
-    console.log(user)
     renderer.renderUserSkills(user)
     renderer.renderUserProfile(user)
 })
@@ -72,7 +71,10 @@ $('#TasksNav').on('click', function(){
 })
 
 $('#skillNav').on('click', function(){
-    const user = api.getLoggedInUserData()
-    console.log(user)
-    renderer.renderUsersAddSkill(user)
+    api.getNonAddedUserSkills()
+})
+
+$('.addSkill-block').on('click','.addToSkills',  function(){
+    const skill =  $(this).parent('.box-part').children('.title').children('h3').text()
+    api.addSkillToUser(skill)
 })

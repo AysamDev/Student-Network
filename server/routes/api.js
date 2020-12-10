@@ -32,9 +32,10 @@ router.post('/userSignUp', async function (req, res) {
     
 })
 
-router.post('/exploreSkills/', async function (req, res) {
-    const blackList = req.body.skills
-    const found= await Challenge.find({},{skill: 1,_id:0})
+router.get('/explore/:skills', async function (req, res) {
+    console.log(req.params.skills)
+    const blackList = req.params.skills
+    const found = await Challenge.find({},{skill: 1,_id:0})
     console.log(blackList)
     const found2 = await found.filter(s => !blackList.includes(s.skill))
     let a = found2.map(f => f.skill)
@@ -75,7 +76,7 @@ router.put('/addSkill/:skill/:username',async function(req,res){
      User.findOneAndUpdate({username: username},{$push:{skills: skill}},function(err,data)
      {
         console.log(data)
-        res.send(data)
+        res.send(data.skills[data.skills.length - 1])
      })
     
 })

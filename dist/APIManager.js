@@ -7,6 +7,7 @@ class APIManager {
         this.renderer = renderer
         this.user = {}
         this.currentSkillChallenges = []
+        this.exploreSkills = []
     }
 
     getUsersDataFromDB()
@@ -44,17 +45,18 @@ class APIManager {
     getNonAddedUserSkills()
     {
         const skills = this.user.skills
-        $.ajax({
-            type:"POST",
-            url: `/exploreSkills/`,
-            data: {skills: skills},
-                success:  (ref) =>
+        console.log(skills)
+        $.ajax({ 
+            type:`GET`,
+            url: `/explore/${skills}`,
+                success: (ref) =>
                 {
                     if(!ref){
                         alert("there are no Skills left to add")
                         return
                     }
-                   
+                   this.exploreSkills = ref
+                   this.renderer.renderUsersAddSkill(this.exploreSkills)
                 },
                 error: (err) => {
                     console.log(err)
@@ -67,16 +69,19 @@ class APIManager {
         $.ajax({
             type:"PUT",
             url: `/addSkill/${skill}/${username}`,
-            success:  (result) =>
+            success:   (result) =>
             {
-               console.log(result)
+                const index =  this.exploreSkills.findIndex(r => r===skill)
+                let a = this.exploreSkills.splice(index,1)
+                this.user.skills.push(a[0])
+                this.renderer.renderUsersAddSkill(this.exploreSkills)
+                this.renderer.renderUserProfile(this.user)
             },
             error: (err) => {
                 console.log(err)
             }
         });
     }
-
     getUserSignInDataFromDB(username,password)
     {
             $.ajax({
