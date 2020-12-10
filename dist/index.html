@@ -103,7 +103,7 @@
                 <li class="nav-item"> <a class="nav-link" id="HomeNav" data-abc="true">Home</a> </li>
                 <li class="nav-item"> <a class="nav-link" id="TasksNav" data-abc="true">Tasks</a> </li>
                 <li class="nav-item"> <a class="nav-link" id="ChallengesNav" data-abc="true">Challenges</a> </li>
-                <li class="nav-item"> <a class="nav-link " id="CoursesNav" data-abc="true">Add Skill</a> </li>
+                <li class="nav-item"> <a class="nav-link " id="skillNav" data-abc="true">Add Skill</a> </li>
                
             </ul>
         </div>
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <div class="px-4 rating-box mb-3">
-                        <div class="border rounded">
+                        <div class="border rounded" style="background-color: #94949447;">
                             <div class="d-flex justify-content-around align-items-center align-content-center border-top">
                                 <div class="text-center border-right  border-left px-2 py-2"><span class=" font-weight-bold">Username:</span> <br><span>{{username}}</span></div>
                                 <div class="text-center border-right  border-left px-2 py-2"><span class=" font-weight-bold">Skills:</span> <br><span>{{skills}}</span></div>
@@ -152,8 +152,8 @@
  <script id="skills-template" type="text/x-handlebars-template" >
      
     {{#each skills}}
-    <ul class="row  col-md-4" > 
-        <li class="card " >
+    <ul class="row  col-lg-5" > 
+        <li class="card col-lg-5" >
             <div class="card_img"> <i class="fas fa-plus"></i>
              </div>
             <div class="card_title">{{this}}</div>
@@ -174,17 +174,16 @@
        {{#each challenges}}
     <div class="row d-flex justify-content-center mt-100 mb-100">
         <div class="col-lg-6">
-            <div id="card-Block"class="card">
+            <div id="card-Block" class="card" >
                 <div class="card-body text-center">
                     <h4 class="card-title m-b-0">{{skill}} </h4>
                 </div>
                 <ul class="list-style-none">
-                    <li class="d-flex no-block card-body"> <i class="fa fa-check-circle w-30px m-t-5"></i>
+                    <li class="d-flex no-block card-body"> <i class="fa  w-30px m-t-5"></i>
                         <div> <a href="#" class="m-b-0 font-medium p-0" data-abc="true">{{slug}}</a> <span class="text-muted">Intermediatee</span> </div>
                         <div class="ml-auto">
-                            <div class="text-right">
-                                <!--<h5 class="text-muted m-b-0">26</h5> <span class="text-muted font-16">FEB</span>-->
-                            </div><button type="button" onclick=window.location.href='{{url}}' class="btn btn-dark">Enroll</button>
+                            <button type="button" style="margin-left: 30px;" onclick=window.location.href='{{url}}'  class="btn btn-dark">Enroll</button>
+                          
                         </div>
                     </li>
                 
@@ -195,45 +194,27 @@
     {{/each}}
 </script>
     <!-----------------------------Display Challenges ---------------------------------------------->
-    <div id="Tasks-block">
-    <div class="page-content page-container" id="page-content">
-        <div class="padding">
-            <div class="row container d-flex justify-content-center">
-                <div class="col-md-8">
-                    <div class="box">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Bordered Table with pagination</h3>
-                        </div> <!-- /.box-header -->
-                        <div class="box-body">
-                            <table class="table table-bordered">
-                                <tbody>
-                                    <tr>
-                                        <th style="width: 10px">#</th>
-                                        <th>Work</th>
-                                        <th>Progress</th>
-                                        <th style="width: 40px">Label</th>
-                                    </tr>
-                                    <tr>
-                                        <td>1.</td>
-                                        <td>Install New Software</td>
-                                        <td>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge bg-red">55%</span></td>
-                                    </tr>
-                        
-                                </tbody>
-                            </table>
-                        </div> <!-- /.box-body -->
-                        
+   
+<!--Cards-->
+<div id="addSkill-block">
+</div>
+
+<div class="box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="box-part text-center"> <i class="fa fa-google-plus fa-3x" aria-hidden="true"></i>
+                    <div class="title">
+                        <h3>{{skill}}</h3>
                     </div>
+                    <div class="text"> <span>Intermediatee</span> </div> <a href="#">Add Skill</a>
                 </div>
             </div>
+        
         </div>
     </div>
 </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
 <script src="User.js"></script>

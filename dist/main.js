@@ -67,6 +67,12 @@ $('#ChallengesNav').on('click', function(){
 $('#TasksNav').on('click', function(){
     const user = api.getLoggedInUserData()
     console.log(user)
-    renderer.renderUserTask(user)
+
     renderer.renderUserProfile(user)
+})
+
+$('#skillNav').on('click', function(){
+    const user = api.getLoggedInUserData()
+    console.log(user)
+    renderer.renderUsersAddSkill(user)
 })
